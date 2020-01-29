@@ -3,52 +3,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/background">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v015"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v085"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <TextView
+        android:id="@+id/search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/d_kallisto"
+        android:gravity="start"
+        android:text="Enter song lyrics"
+        android:textAlignment="viewStart"
+        android:textAllCaps="true"
+        android:textColor="@color/lightest_gray"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/search_til"
+        app:layout_constraintStart_toStartOf="@id/guideline_v015"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/enter_lyrics_til"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
-        android:gravity="center"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@id/search_mb"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/search_til"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v085"
+        app:layout_constraintStart_toStartOf="@id/guideline_v015"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintVertical_weight="5">
+        android:background="@color/gray"
+        android:textColorHint="@color/lightest_gray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enter_lyrics_tiet"
+            android:id="@+id/search_tiet"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="32sp"
-            android:textColor="@android:color/white"
-            android:hint="Enter lyrics"
-            android:textAlignment="center" />
+            android:hint="lyrics..."
+            android:fontFamily="@font/d_kallisto"
+            android:textSize="16sp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/search_mb"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="Search"
-        app:layout_constraintBottom_toTopOf="@id/music_rv_rv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/enter_lyrics_til"
-        app:layout_constraintVertical_weight="1" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/music_rv_rv"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/find_song_mb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:fontFamily="@font/d_kallisto"
+        android:text="Find song"
+        android:textSize="24sp"
+        android:textAllCaps="true"
+        android:textColor="@color/lightest_gray"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_mb"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintEnd_toEndOf="@id/guideline_v085"
+        app:layout_constraintStart_toStartOf="@id/guideline_v015"
+        app:layout_constraintTop_toBottomOf="@id/search_til" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

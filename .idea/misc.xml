@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/Contributors.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/Album.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/AppleMusic.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/Artist.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/Artists.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/Artwork.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/AuddAlbum.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/AuddArtist.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/Deezer.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/DeezerAnswer.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/ExternalIds.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/ExternalUrls.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/Images.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/PlayParams.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/Previews.kt" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tsymbaliuk/soundrecognation/pojo/Spotify.kt" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

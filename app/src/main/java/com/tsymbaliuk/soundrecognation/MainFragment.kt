@@ -23,7 +23,7 @@ import com.deezer.sdk.player.TrackPlayer
 import com.deezer.sdk.player.event.PlayerWrapperListener
 import com.deezer.sdk.player.networkcheck.WifiOnlyNetworkStateChecker
 import com.tsymbaliuk.soundrecognation.pojo.Result
-import kotlinx.android.synthetic.main.search_fragment.view.*
+import kotlinx.android.synthetic.main.search.view.*
 
 class MainFragment : Fragment(), SoundRecyclerViewAdapter.OnItemClickListener {
 
@@ -55,7 +55,7 @@ class MainFragment : Fragment(), SoundRecyclerViewAdapter.OnItemClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(R.layout.search_fragment, container, false)
+        val rootView = inflater.inflate(R.layout.search, container, false)
 
         val permissions = arrayOf<String>(
             Permissions.BASIC_ACCESS,
@@ -99,7 +99,7 @@ class MainFragment : Fragment(), SoundRecyclerViewAdapter.OnItemClickListener {
         val viewModelFactory = SoundViewModelFactory()
         soundViewModel = ViewModelProviders.of(activity!!, viewModelFactory).get(SoundViewModel::class.java)
 
-        soundViewModel.newsLiveData.observe(this, Observer {
+        soundViewModel.newsLiveData.observe(activity!!, Observer {
             if (it != null) {
                 onDataChange(it)
             }

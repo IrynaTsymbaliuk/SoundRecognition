@@ -3,4 +3,13 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="dark_gray">#070707</color>
+    <color name="gray">#454854</color>
+    <color name="light_gray">#797B87</color>
+    <color name="lighter_gray">#B9C2C2</color>
+    <color name="lightest_gray">#CED6D5</color>
+    <color name="brown">#540201</color>
+    <color name="red">#F8020D</color>
+
 </resources>

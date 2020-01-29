@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav"
-    app:startDestination="@id/fragmentMain">
+    app:startDestination="@id/startFragment">
 
     <fragment
         android:id="@+id/fragmentMain"
         android:name="com.tsymbaliuk.soundrecognation.MainFragment"
         android:label="FragmentMain" />
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.tsymbaliuk.soundrecognation.ui.StartFragment"
+        android:label="StartFragment" >
+        <action
+            android:id="@+id/action_startFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.tsymbaliuk.soundrecognation.ui.RulesFragment"
+        android:label="RulesFragment" >
+        <action
+            android:id="@+id/action_rulesFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.tsymbaliuk.soundrecognation.ui.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.tsymbaliuk.soundrecognation.ui.ResultFragment"
+        android:label="ResultFragment" >
+        <action
+            android:id="@+id/action_resultFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_answerFragment"
+            app:destination="@id/answerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/answerFragment"
+        android:name="com.tsymbaliuk.soundrecognation.ui.AnswerFragment"
+        android:label="AnswerFragment" >
+        <argument
+            android:name="answerIndex"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>
