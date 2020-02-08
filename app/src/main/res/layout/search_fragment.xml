@@ -42,8 +42,8 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_v085"
         app:layout_constraintStart_toStartOf="@id/guideline_v015"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/gray"
         android:textColorHint="@color/lightest_gray"
+        app:boxStrokeColor="@color/lightest_gray"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -51,6 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="lyrics..."
+            android:backgroundTint="@color/lightest_gray"
+            android:textColor="@color/lightest_gray"
+            android:textColorHint="@color/lightest_gray"
             android:fontFamily="@font/d_kallisto"
             android:textSize="16sp"/>
 

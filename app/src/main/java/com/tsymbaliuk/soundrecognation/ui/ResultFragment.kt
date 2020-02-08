@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -27,12 +28,8 @@ import kotlinx.android.synthetic.main.result_fragment.view.*
 class ResultFragment: Fragment() {
 
     private lateinit var soundViewModel: SoundViewModel
-
-    lateinit var deezerConnect: DeezerConnect
-    lateinit var dialogListener: DialogListener
     lateinit var playerWrapperListener: PlayerWrapperListener
     lateinit var requestListener: RequestListener
-    lateinit var trackPlayer: TrackPlayer
 
     var attempt = 0
 
@@ -43,34 +40,16 @@ class ResultFragment: Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.result_fragment, container, false)
 
-        val permissions = arrayOf<String>(
-            Permissions.BASIC_ACCESS,
-            Permissions.MANAGE_LIBRARY,
-            Permissions.LISTENING_HISTORY
-        )
-
-        dialogListener = object : DialogListener {
-            override fun onComplete(values: Bundle) {}
-            override fun onCancel() {}
-            override fun onException(e: Exception) {}
-        }
-
-        deezerConnect = DeezerConnect(context, Constants.deezerAppId)
-        deezerConnect.authorize(activity, permissions, dialogListener)
-
-        trackPlayer = TrackPlayer(
-            App.instance, deezerConnect,
-            WifiOnlyNetworkStateChecker()
-        )
-
         requestListener = object : JsonRequestListener() {
             override fun onResult(result: Any?, requestID: Any?) {
-                trackPlayer.addPlayerListener(playerWrapperListener)
+                ConnectManager.getPlayer().addPlayerListener(playerWrapperListener)
                 result as PaginatedList<Track>
-                if (attempt < result.size+1) {
-                    trackPlayer.playTrack(result[attempt].id)
+                if (!result.isNullOrEmpty() && attempt < result.size) {
+                    ConnectManager.getPlayer().playTrack(result[attempt].id)
+                    soundViewModel.selectedSong.value = result[attempt]
+                } else {
+                    Toast.makeText(context, "That's all!", Toast.LENGTH_SHORT).show()
                 }
-                soundViewModel.selectedSong.value = result[attempt]
             }
 
             override fun onUnparsedResult(p0: String?, p1: Any?) {}
@@ -111,11 +90,10 @@ class ResultFragment: Fragment() {
 
     private fun onDataChange() {
         if (soundViewModel.newsLiveData.value != null) {
-            deezerConnect.requestAsync(
+            ConnectManager.getConnect(activity!!).requestAsync(
                 DeezerRequestFactory.requestSearchTracks(soundViewModel.newsLiveData.value!![attempt].title), requestListener
             )
         }
     }
-
 
 }
