@@ -1,6 +1,8 @@
 # SoundRecognition
 Test task Int20h2020
 
+![](https://user-images.githubusercontent.com/42023359/74088971-1af0ae80-4aad-11ea-88b2-9616aeec9b35.png)
+
 For the properly app work add the Audd Api Token and Deezer Application ID to the local.properties in Gradle Scripts.
 audd_api_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 deezer_app_id = "xxxxxx"
@@ -12,7 +14,7 @@ deezer_app_id = "xxxxxx"
 4. At the bottom of the page, in the "Android Application" section, add the Android package name of your application, and click "Save";
 5. Paste your Application ID to the local.properties in Gradle Scripts like "deezer_app_id = "xxxxxx"", where xxxxxx - Application ID
 
-###### How to get Audd Api Token?
+###### How to get Audd Api Token:
 1. Open the [Audd TG bot](https://t.me/auddbot?start=api);
 2. Click "Start" -> "I want to use the text lyrics search" -> "Show the api_token"
 3. Paste your Api Token to the local.properties in Gradle Scripts like "audd_api_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"", where xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx - Api Token
